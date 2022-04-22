@@ -1,0 +1,9 @@
+server:
+  port: 9000
+spring:
+  data:
+    cassandra:
+     port: 9042
+     keyspace-name: container_yard
+url : http://localhost:9001/api/bookings/checkAvailable
+#url : https://www.maersk.com/api/bookings/checkAvailable

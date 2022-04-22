@@ -1,0 +1,52 @@
+ ------- PORTAL SERVICE -----
+
+#CODE EXPLANATION
+
+  CONFIGURATION :  application.yml
+  PORT : 9000
+  ENDPOINT : http://localhost:9000/api/bookinigs
+  CONTROLLER : PortalController.java
+  METHOD : submit (POST)
+  PARAM : Booking (Entity)
+  EX:
+    {    
+             "containerType" : "DRY",
+             "containerSize" : 40,
+             "origin" : "Check",
+             "destination" : "Singapore",
+             "quantity" : 2,
+             "timeStamp" : "2020-10-12T13:53:09Z"
+    }
+    
+   RETURN : JSON (Response Entity)
+   EX:
+   {
+    "available": true
+   }
+   
+   REFERENCE IMAGE : Endpoint-test-postman.png ATTACHED
+   UNIT TESTED : Using Postman (SCREENSHOT ATTACHED)
+   
+   EXCEPTION HANDLED : Created custom exception and handled
+   			 NoContainerException.java
+   			 ParameterException.java
+   			 ServiceException.java
+   PACKAGE: com.portal.exception
+   
+  #DB CONNECTION
+  
+   DB : Cassandra (Running in PORT 9042)
+   KEYSPACE : container_yard
+   TABLES : container, booking
+   data.sql is ATTACHED
+   
+   PACKAGE HIERARCHY:
+     com.portal
+     com.portal.controller
+     com.portal.model
+     com.portal.config
+     com.portal.service
+     com.portal.repository
+     com.portal.exception
+   CONFIG : Config file for Bean creation and settings
+     
